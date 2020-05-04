@@ -35,6 +35,8 @@
 
 
 ## 設計書
+ER図
+https://app.diagrams.net/#G1zwUXUDDEqC2Ns71lijZVfzRoWnuL536D
 
 
 ### 機能一覧
