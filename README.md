@@ -35,9 +35,10 @@
 
 
 ## 設計書
-ER図
-https://app.diagrams.net/#G1zwUXUDDEqC2Ns71lijZVfzRoWnuL536D
-
+ER図  
+https://app.diagrams.net/#G1zwUXUDDEqC2Ns71lijZVfzRoWnuL536D  
+テーブル定義書  
+https://drive.google.com/file/d/1ne7zhNQLmowT5BZQkR3T0ilWrYfUw7YL/view?usp=sharing  
 
 ### 機能一覧
 https://docs.google.com/spreadsheets/d/1iABw-fvtKRnpGTQSeOQOrpNzWfdK21L1BtzxIttRKUU/edit#gid=0
