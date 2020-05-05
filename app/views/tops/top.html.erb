@@ -1,0 +1,7 @@
+<h1>Tops#top</h1>
+<p>Find me in app/views/tops/top.html.erb</p>
+<%if admin_signed_in? %>
+<%= link_to "ログアウト",destroy_admin_session_path	,method: :delete%>
+<% else %>
+<%= link_to "ログイン",new_admin_session_path%>
+<% end %>
