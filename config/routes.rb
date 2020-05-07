@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  
+
+  resources :products,only: [:new,:create,:show]
   resources :questions, only: [:show,:new,:edit,:create,:update] do
   	resource :answers, only: [:edit,:create,:update,:destroy]
   end
