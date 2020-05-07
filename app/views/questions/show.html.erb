@@ -1,5 +1,16 @@
 <h1>Questions#show</h1>
 <p>Find me in app/views/questions/show.html.erb</p>
-
+<h1>質問</h1>
 <%= @question.title %>
+<h1>内容</h1>
 <%= @question.question_comment %>
+
+<h1>回答する</h1>
+<%=form_with model: Answer.new,url: "/questions/#{@question.id}/answers", local: true do |f| %>
+	<div><%= f.text_area :answer_comment %></div>
+	<div><%= f.submit%></div>
+<% end %>
+
+<% @answers.each do |a|%>
+	<div><%=a.answer_comment%></div>
+<% end %>
