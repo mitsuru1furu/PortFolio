@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
   end
   def show
   	@product = Product.find(params[:id])
+  	@product_posts = @product.product_posts.all
   end
   def create
   	@product = Product.new(product_params)

@@ -1,0 +1,12 @@
+<h1>入力画面</h1>
+<h1>商品名</h1>
+<div><%= @product.name %></div>
+<div><%= image_tag attachment_url(@product, :product_image, :fill, 300, 300) %></div>
+<div><strong>商品説明</strong></div>
+<div><%= @product.introduction %></div>
+<%= @product.name %>
+<%= form_with model: OrderProduct.new,url:  "/products/#{@product.id}/order_products",local: :true do |f| %>
+	<div><%=f.radio_button :payment,(:クレカ) %></div>
+	<div><%=f.radio_button :payment,(:銀行) %></div>
+	<div><%=f.submit %></div>
+<% end%>
