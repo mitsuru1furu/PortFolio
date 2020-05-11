@@ -1,0 +1,8 @@
+<h2>質問を修正する</h2>
+<%=form_with model: Question.find(params[:id]), local: true do |f| %>
+	<div><%= f.label :質問%></div>
+	<div><%= f.text_field :title%></div>
+	<div><%= f.label :内容%></div>
+	<div><%= f.text_area :question_comment %></div>
+	<div><%= f.submit%></div>
+<% end %>
