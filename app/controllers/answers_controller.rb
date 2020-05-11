@@ -11,9 +11,15 @@ class AnswersController < ApplicationController
   end
 
   def update
-    @question = Answer.find(params[:question_id])
-    @question.user_id = current_user.id
-    @question.update(answer_params)
+    @answer = Answer.find(params[:question_id])
+    @answer.user_id = current_user.id
+    @answer.update(answer_params)
+  end
+  def destroy
+    @answer = Answer.find(params[:question_id])
+    @answer.user_id = current_user.id
+    @answer.destroy
+    redirect_back fallback_location: @question
   end
 
   private

@@ -12,5 +12,6 @@
 	<% @questions.each do |q| %>
 		質問
 	<%=link_to q.title,question_path(q.id) %>
+	<%= link_to :削除, "/questions/#{q.id}",method: :delete %>
 	<%end%>
 </div>
