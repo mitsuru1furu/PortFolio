@@ -9,12 +9,21 @@ class QuestionsController < ApplicationController
   end
 
   def edit
+    
   end
   def create
   	@question =Question.new(question_params)
   	@question.user_id = current_user.id
   	@question.save
   	redirect_to "/"
+  end
+
+  def update
+    @question = Question.find(params[:id])
+    @question.user_id = current_user.id
+    @question.update(question_params)
+    
+   
   end
 
   def destroy

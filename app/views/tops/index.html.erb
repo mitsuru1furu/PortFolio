@@ -1,1 +1,16 @@
-<h1></h1>
+<div>
+	<% @products.each do |p| %>
+		商品名
+	<%= link_to p.name, product_path(p.id) %>
+	<%= link_to product_path(p.id) do %>
+	<%= image_tag attachment_url(p, :product_image, :fill, 30, 30) %>
+	<% end %>
+	<%end%>
+</div>
+
+<div>
+	<% @questions.each do |q| %>
+		質問
+	<%=link_to q.title,question_path(q.id) %>
+	<%end%>
+</div>

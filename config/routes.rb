@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-
-  resources :products,only: [:new,:create,:show]
+  resources :order_products, only: [:create]
+  resources :products,only: [:new,:create,:show] do
+  	resources :product_posts, only: [:create]
+    resources :order_products, only: [:new,:edit,:confirm,:done,:show,:create]
+  end
   resources :questions, only: [:show,:new,:edit,:create,:update] do
   	resource :answers, only: [:edit,:create,:update,:destroy]
   end

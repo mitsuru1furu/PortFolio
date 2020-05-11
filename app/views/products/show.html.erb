@@ -4,5 +4,30 @@
 <div><%= image_tag attachment_url(@product, :product_image, :fill, 300, 300) %></div>
 <div><strong>商品説明</strong></div>
 <div><%= @product.introduction %></div>
-<div></div>
-<div></div>
+<%= link_to '購入へ進む', new_product_order_product_path(@product.id)%>
+
+<%= form_with model: OrderProduct.new, url:  "/products/#{@product.id}/order_products",local: :true do |f| %>
+	<div><%=f.radio_button :payment,(:クレカ) %></div>
+	<div><%=f.radio_button :payment,(:銀行) %></div>
+	
+	<div><%=f.submit %></div>
+<% end%>
+
+<h1>投稿する</h1>
+<%=form_with model: ProductPost.new,url: "/products/#{@product.id}/product_posts" ,local: :true do |f| %>
+	<div><%= f.label :タイトル %></div>
+	<div><%= f.text_field :post_title %></div>
+	<div><%= f.label :投稿内容%></div>
+	<div><%= f.text_area :post_comment %></div>
+	<div><%= f.label :画像%></div>
+	<div><%= f.attachment_field :post_image %></div>
+	<div><%= f.submit %></div>
+<% end %>
+
+<% @product_posts.each do |p|%>
+	<div><strong>タイトル</strong></div>
+	<div><%= p.post_title%></div>
+	<div><strong>投稿内容</strong></div>
+	<div><%= p.post_comment%></div>
+	<div></div>
+<% end %>
