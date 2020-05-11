@@ -1,0 +1,7 @@
+<h1>入力画面</h1>
+
+<%= form_with model: OrderProduct.new, url:  "/order_products",local: :true do |f| %>
+	<div><%=f.radio_button :payment,(:クレカ) %></div>
+	<div><%=f.radio_button :payment,(:銀行) %></div>
+	<div><%=f.submit %></div>
+<% end%>

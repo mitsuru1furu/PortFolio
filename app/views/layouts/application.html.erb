@@ -8,6 +8,24 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  管理者<
+<%if admin_signed_in? %>
+<%= link_to "ログアウト",destroy_admin_session_path  ,method: :delete%>
+<% else %>
+<%= link_to "ログイン",new_admin_session_path%>
+<% end %>
+会員
+<%if user_signed_in? %>
+<%= link_to "ログアウト",destroy_user_session_path ,method: :delete%>
+<% else %>
+<%= link_to "ログイン",new_user_session_path%>
+<% end %>
+Q&A
+<%=link_to "質問する",new_question_path%>
+商品作成
+<%=link_to "作成する", new_product_path%>
+一覧
+<%=link_to "見る", index_path%>
 
   <body>
     <%= yield %>

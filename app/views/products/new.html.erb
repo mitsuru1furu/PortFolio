@@ -1,0 +1,11 @@
+<h1>Products#new</h1>
+<p>Find me in app/views/products/new.html.erb</p>
+<%= form_with model: Product.new, local: :true do |f|%>
+	<div><%=f.label :商品画像%></div>
+	<div><%= f.attachment_field :product_image %></div>
+	<div><%=f.label :商品名%></div>
+	<div><%=f.text_field :name%></div>
+	<div><%=f.label :商品説明%></div>
+	<div><%= f.text_area :introduction%></div>
+	<div><%= f.submit%></div>
+<% end %>
