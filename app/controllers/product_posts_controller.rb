@@ -8,6 +8,12 @@ class ProductPostsController < ApplicationController
 		redirect_back fallback_location: @product
 	end
 
+	def destroy
+		@product_post = ProductPost.find(params[:product_id])
+		@product_post.user_id = current_user.id
+		@product_post.destroy
+		redirect_back fallback_location: @product
+	end
 	private
 	def product_post_params
 		params.require(:product_post).permit(:post_title,:post_comment,:post_image)

@@ -29,5 +29,5 @@
 	<div><%= p.post_title%></div>
 	<div><strong>投稿内容</strong></div>
 	<div><%= p.post_comment%></div>
-	<div></div>
+	<div><%= link_to :削除,product_product_post_path(p.id),method: :delete%></div>
 <% end %>

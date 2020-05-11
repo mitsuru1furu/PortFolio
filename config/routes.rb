@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+
   resources :order_products, only: [:create]
+
   resources :products,only: [:new,:create,:show] do
-  	resources :product_posts, only: [:create]
+  	resources :product_posts, only: [:create,:destroy]
     resources :order_products, only: [:new,:edit,:confirm,:done,:show,:create]
   end
-  resources :questions, only: [:show,:new,:edit,:create,:update] do
+  resources :questions, only: [:show,:new,:edit,:create,:update,:destroy] do
   	resource :answers, only: [:edit,:create,:update,:destroy]
   end
   devise_for :users,path:'',path_names: {sign_in:'login',sign_up:'up'}

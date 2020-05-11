@@ -15,4 +15,5 @@
 <% @question.answers.all.each do |a|%>
 	<div><%=a.answer_comment%></div>
 	<%= link_to "修正する", edit_question_answers_path(a.id) %>
+	<%= link_to :削除, "/questions/#{a.id}/answers",method: :delete %>
 <% end %>
